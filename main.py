@@ -13,7 +13,10 @@ class Student:
             print(f"Subject: {subject.name}, Difficulty: {subject.difficulty}")
     
     def take_grade(self, subject_name, grade):
-        self.grades[subject_name] = grade 
+        if subject_name in self.subjects:
+            self.grades[subject_name] = grade
+        else:
+            print("bunday fan yoq")
 
     def list_grades(self):
         for subject, grade in self.grades.items():
